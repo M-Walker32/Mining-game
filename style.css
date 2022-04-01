@@ -1,0 +1,55 @@
+:root {
+  --gamePink: hsl(0, 100%, 95%);
+  --gameRed: hsl(17, 100%, 57%);
+  --gameTeal: #006680;
+  --gameYellow: hsl(46, 100%, 78%);
+}
+
+header{
+  background-color: var(--gameTeal);
+}
+
+main{
+  background-color: var(--gameRed);
+  height: 75vh;
+}
+
+footer{
+  background-color: var(--gameTeal);
+  height: 10vh;
+}
+
+.upgrade-card{
+  background-color: var(--gameYellow);
+  height: 70VH;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.btn-red{
+  background-color: var(--gameRed);
+  border-radius: 10px;
+  padding: 5px;
+  color:white;
+  border: none;
+}
+
+:hover.btn-red{
+  background-color: var(--gamePink);
+  color:white;
+}
+
+.game-field{
+  background-color: var(--gamePink);
+  height: 70vh;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.myra-img{
+  max-height: 10vh;
+  max-width: 10vh;
+  cursor: pointer;
+}
