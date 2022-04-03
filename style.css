@@ -1,55 +1,95 @@
+/* *{
+  border: 1px solid tomato;
+} */
+
 :root {
-  --gamePink: hsl(0, 100%, 95%);
-  --gameRed: hsl(17, 100%, 57%);
-  --gameTeal: #006680;
-  --gameYellow: hsl(46, 100%, 78%);
+  --gamePink: #fdd6cf;
+  --gameRed: #ec5629;
+  --gameTeal: #166161;
+  --gameYellow: #fdbb10;
+  --gameBlue: #291f5d;
 }
 
 header{
   background-color: var(--gameTeal);
 }
 
+i{
+  color: #166161;
+  font-size: 2em;
+}
+
+p{
+  font-family: 'Fredoka One', Arial, Helvetica, sans-serif;
+  COLOR:var(--gameBlue);
+  margin: 0!important;
+}
+
 main{
   background-color: var(--gameRed);
-  height: 75vh;
+  display: flex;
+  min-height: 85vh;
 }
 
 footer{
   background-color: var(--gameTeal);
-  height: 10vh;
+  height: 50px;
 }
 
 .upgrade-card{
   background-color: var(--gameYellow);
-  height: 70VH;
+  height: 80vh;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
-}
-
-.btn-red{
-  background-color: var(--gameRed);
-  border-radius: 10px;
-  padding: 5px;
-  color:white;
-  border: none;
-}
-
-:hover.btn-red{
-  background-color: var(--gamePink);
-  color:white;
+  inline-size: min-content;
 }
 
 .game-field{
   background-color: var(--gamePink);
-  height: 70vh;
+  height: 80vh;
   padding: 5px;
   margin: 10px;
   border-radius: 10px;
 }
 
+.btn-red{
+  background-color: var(--gameBlue);
+  border-radius: 10px;
+  padding: .5em;
+  margin: 1em;
+  color:white;
+  border: none;
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+:hover.btn-red{
+  background-color: var(--gameTeal);
+  color:white;
+}
+
 .myra-img{
-  max-height: 10vh;
-  max-width: 10vh;
+  max-height: 25vh;
+  max-width: 25vh;
   cursor: pointer;
 }
+
+h3{
+  color: var(--gameRed);
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1{
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.alternate{
+ border-top: .25rem solid var(--gamePink);
+}
+
+span{
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: .25em;
+  margin: .25em;
+  color: var(--gameRed);
+  align-self: center;}
