@@ -53,7 +53,7 @@ function buyPeanutButter() {
     cash -= price
     let newquantity = clickUpgrades.peanutbutter.quantity += 1
     clickUpgrades.peanutbutter.price += 5
-    insertClicker()
+    insertClickerPeanut()
     // console.log('buy', cash, newquantity)
   }
   else {

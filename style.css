@@ -15,8 +15,8 @@ header{
 }
 
 i{
-  color: #166161;
-  font-size: 2em;
+  color: var(--gameRed);
+  font-size: 1em;
 }
 
 p{
@@ -35,6 +35,22 @@ footer{
   background-color: var(--gameTeal);
   height: 50px;
 }
+
+h3{
+  color: var(--gameRed);
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1{
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+span{
+  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: .25em;
+  margin: .25em;
+  color: var(--gameRed);
+  align-self: center;}
 
 .upgrade-card{
   background-color: var(--gameYellow);
@@ -74,22 +90,6 @@ footer{
   cursor: pointer;
 }
 
-h3{
-  color: var(--gameRed);
-  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-h1{
-  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .alternate{
  border-top: .25rem solid var(--gamePink);
 }
-
-span{
-  font-family: 'Fredoka One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  padding: .25em;
-  margin: .25em;
-  color: var(--gameRed);
-  align-self: center;}
