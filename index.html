@@ -49,8 +49,8 @@
           <h1>Dog Coin</h1>
         </div>
         <div class="col-4 d-flex justify-content-end">
-          <h4><i class="mdi mdi-cash"></i><span id="cash">100</span></h4>
-          <h4><i class="mdi mdi-dog"></i><span id="goodgirlpoints">0</span></h4>
+          <!-- <h4><i class="mdi mdi-cash"></i><span id="cash">100</span></h4> -->
+          <h4><i class="mdi mdi-dog"></i><span id="goodgirlpoints">100</span></h4>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
               </div>
               <div class="col-12 w-100 d-flex alternate justify-content-between align-items-center">
                 <span id="PBQuantity" class="">0</span>
-                <p id="upgrade1" class="m-0">PEANUT BUTTER click multiplier x1</p>
+                <p id="upgrade1" class="m-0">PEANUT BUTTER x1</p>
                 <div class="d-flex">
                   <span id="PBCost"></span>
                   <button onclick="buyPeanutButter()" class="btn-red">Buy</button>
@@ -75,7 +75,7 @@
               </div>
               <div class="col-12 d-flex w-100 alternate justify-content-between align-items-center">
                 <span id="chickenQuantity" class="">0</span>
-                <p id="upgrade2" class="m-0">ROTISSERIE CHICKEN click multiplier x5</p>
+                <p id="upgrade2" class="m-0">ROTISSERIE CHICKEN x5</p>
                 <div class="d-flex">
                   <span id="chickenCost"></span>
                   <button onclick="buyChicken()" class="btn-red">Buy</button>
@@ -83,7 +83,7 @@
               </div>
               <div class="col-12 w-100 d-flex alternate justify-content-between align-items-center">
                 <span id="walkQuantity" class="">0</span>
-                <p id="upgrade3">WALK MULTIPLIER Add $50</p>
+                <p id="upgrade3">WALK MULTIPLIER x50</p>
                 <div class="d-flex">
                   <span id="walkCost"></span>
                   <button onclick="buyWalk()" class="btn-red">Buy</button>
@@ -91,11 +91,16 @@
               </div>
               <div class="col-12 w-100 d-flex alternate space-between justify-content-between align-items-center">
                 <span id="zoomiesQuantity" class="">0</span>
-                <p id="upgrade4">ZOOMIES MULTIPLIER Add $100</p>
+                <p id="upgrade4">ZOOMIES MULTIPLIER x100</p>
                 <div class="d-flex">
                   <span id="zoomCost"></span>
                   <button onclick="buyZoomies()" class="btn-red">Buy</button>
                 </div>
+              </div>
+              <div class="col-12 w-100 d-flex alternate space-between justify-content-between align-items-center">
+                <p>Points Per Second:<span id='pointsPerSecond'>0</span>
+                <p>Click Value:<span id='clickValue'>1</span>
+                </p>
               </div>
             </div>
           </div>

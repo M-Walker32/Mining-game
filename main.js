@@ -1,5 +1,4 @@
-let cash = 100
-let points = 0
+let points = 100
 
 let clickUpgrades = {
   peanutbutter: {
@@ -21,7 +20,7 @@ let autoUpgrades = {
     multiplier: 50
   },
   zoomies: {
-    price: 50,
+    price: 500,
     quantity: 0,
     multiplier: 100
   }
@@ -49,17 +48,18 @@ function drawcost() {
 
 function buyPeanutButter() {
   let price = clickUpgrades.peanutbutter.price
-  if (cash >= price) {
-    cash -= price
+  if (points >= price) {
+    points -= price
     let newquantity = clickUpgrades.peanutbutter.quantity += 1
     clickUpgrades.peanutbutter.price += 5
     insertClickerPeanut()
     // console.log('buy', cash, newquantity)
   }
   else {
-    alert('no mor money')
+    alert('not enough good girl points')
   }
-  updateMoney()
+  updatePoints()
+  updateStats()
   updateQuantity()
 }
 
@@ -78,18 +78,19 @@ function insertClickerChicken() {
 
 function buyChicken() {
   let price = clickUpgrades.chicken.price
-  if (cash >= price) {
-    cash -= price
+  if (points >= price) {
+    points -= price
     let newquantity = clickUpgrades.chicken.quantity += 1
     clickUpgrades.chicken.price += 10
     // console.log('buy', cash, newquantity)
+    insertClickerChicken()
   }
   else {
-    alert('no mor money')
+    alert('not enough good girl points')
   }
-  updateMoney()
+  updatePoints()
   updateQuantity()
-  insertClickerChicken()
+  updateStats()
 }
 
 //#endregion
@@ -98,24 +99,25 @@ function buyChicken() {
 
 function buyWalk() {
   let price = autoUpgrades.walk.price
-  if (cash >= price) {
-    cash -= price
+  if (points >= price) {
+    points -= price
     let newquantity = autoUpgrades.walk.quantity += 1
     autoUpgrades.walk.price += 50
     walk()
     // console.log('buy', cash, newquantity)
   }
   else {
-    alert('no mor money')
+    alert('not enough good girl points')
   }
-  updateMoney()
+  updatePoints()
   updateQuantity()
+  updateStats()
 }
 
 function walk() {
   // on each zoomies purchase myra runs faster for 5 seconds
   let quantity = autoUpgrades.zoomies.quantity
-  let num1 = quantity -= 10
+  let num1 = quantity -= 15
   if (num1 <= 1) { num1 += 5 }
   let zoom = document.getElementById('marquee')
   let zoomAmount = zoom.setAttribute('scrollamount', num1, num1)
@@ -123,41 +125,46 @@ function walk() {
 
 function buyZoomies() {
   let price = autoUpgrades.zoomies.price
-  if (cash >= price) {
-    cash -= price
+  if (points >= price) {
+    points -= price
     let newquantity = autoUpgrades.zoomies.quantity += 1
     autoUpgrades.zoomies.price += 100
     // console.log('buy', cash, newquantity)
     zoomies()
   }
   else {
-    alert('no mor money')
+    alert('not enough good girl points')
   }
-  updateMoney()
+  updatePoints()
   updateQuantity()
+  updateStats()
 }
 
 function zoomies() {
   // on each zoomies purchase myra runs faster for 5 seconds
   let quantity = autoUpgrades.zoomies.quantity
-  let num1 = quantity += 10
+  let num1 = quantity += 15
   let zoom = document.getElementById('marquee')
   let zoomAmount = zoom.setAttribute('scrollamount', num1, num1)
 }
 
 function collectAutoUpgrades() {
   let walkpoints = autoUpgrades.walk.quantity * autoUpgrades.walk.multiplier
-  cash += walkpoints
+  points += walkpoints
   let zoompoints = autoUpgrades.zoomies.quantity * autoUpgrades.zoomies.multiplier
-  cash += zoompoints
-  updateMoney()
+  points += zoompoints
+  updatePoints()
 }
 //#endregion
 
 //#region Updates
 
-function updateMoney() {
-  document.getElementById('cash').innerText = cash
+function updateStats() {
+  let clickValue = 1 + (clickUpgrades.chicken.quantity * clickUpgrades.chicken.multiplier) + (clickUpgrades.peanutbutter.multiplier * clickUpgrades.peanutbutter.quantity)
+  document.getElementById('clickValue').innerText = clickValue
+  let pointStats = (autoUpgrades.walk.quantity * autoUpgrades.walk.multiplier) + (autoUpgrades.zoomies.quantity * autoUpgrades.zoomies.multiplier)
+  let pointspersecond = Math.floor(pointStats / 3)
+  document.getElementById('pointsPerSecond').innerText = pointspersecond
 }
 
 function updateQuantity() {
@@ -174,7 +181,6 @@ function updateQuantity() {
 
 function updatePoints() {
   document.getElementById('goodgirlpoints').innerText = points
-  // console.log(points)
 }
 
 function multiplier() {
